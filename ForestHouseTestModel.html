@@ -1,0 +1,30 @@
+<html>
+<head>
+	<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+	<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
+</head>
+	<body>
+		<a-scene>
+
+			<a-assets>
+
+				<a-asset-item id="scene1_gltf" src="https://raw.githubusercontent.com/nina180/SGD285/main/forestHouse/scene.gltf"></a-asset-item>
+				<a-asset-item id="scene2_gltf" src="https://raw.githubusercontent.com/nina180/SGD285/main/toon_cat_free/scene.gltf"></a-asset-item>
+
+				<audio id="forestNoise"
+					   src="https://cdn.glitch.global/def3a894-b749-4995-883b-3fe2b08b8010/forest-with-small-river-birds-and-nature-field-recording-6735.mp3?v=1712173231747">
+				</audio>
+
+			</a-assets>
+
+			<a-gltf-model animation-mixer="clip: Scene" position="0.95 6.737 5.24" rotation="0 90 0" scale="0.00007 0.00007 0.00007" src="#scene2_gltf"></a-gltf-model>
+
+			<a-gltf-model position="1 6.7 5" rotation="0 90 0" scale="3.5 3.5 3.5" src="#scene1_gltf" sound="src:#forestNoise; on: click; volume: 0.5; poolSize: 10"></a-gltf-model>
+			<a-plane static-body position="0 -1 -4" rotation=" 0 0" width="200" height="200" color="#7BC8A4"></a-plane>
+			<a-sky color="#ECECEC"></a-sky>
+			<a-camera position="1 7 5.3" user-height="1.6"> <a-cursor></a-cursor></a-camera>
+
+		</a-scene>
+
+	</body>
+</html>
