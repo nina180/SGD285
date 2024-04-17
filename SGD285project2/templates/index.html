@@ -1,0 +1,41 @@
+<html>
+<head>
+	<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+	<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+	<body>
+		<a-scene>
+
+			<a-assets>
+
+				<a-asset-item id="mod" src="https://raw.githubusercontent.com/nina180/SGD285/main/forestHouse/scene.gltf"></a-asset-item>
+				<a-asset-item id="mod2" src="https://raw.githubusercontent.com/nina180/SGD285/main/toon_cat_free/scene.gltf"></a-asset-item>
+				<a-asset-item id="mod3" src="https://raw.githubusercontent.com/nina180/SGD285/main/Tv3DModels/scene.gltf"></a-asset-item>
+			</a-assets>
+
+			
+
+			<a-gltf-model position="1 6.7 5" rotation="0 90 0" scale="4 4 4" src="#scene1"></a-gltf-model>
+			<a-gltf-model animation-mixer="clip: Scene" position="1 6.7 5" rotation="0 90 0" scale="4 4 4" src="#scene2"></a-gltf-model>
+			<a-gltf-model animation-mixer="clip: Animation" position="1 6.7 5" rotation="0 90 0" scale="4 4 4" src="#scene3"></a-gltf-model>
+			<a-camera position="1 7 5.3" user-height="1.6"> <a-cursor></a-cursor></a-camera>
+
+		</a-scene>
+		
+		<script>
+			if({{sentiment}}>0)
+				{
+				$('#mod2').attr('id', '#scene2');
+				}
+			else if({{sentiment}}<0)
+				{
+				$('#mod3').attr('id', '#scene3');
+				}
+			else
+				{
+				$('#mod').attr('id', '#scene1');
+				}
+		</script>
+	</body>
+</html>
